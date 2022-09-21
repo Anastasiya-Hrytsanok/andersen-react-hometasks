@@ -1,7 +1,7 @@
 .questionLine {
     display: flex;
     flex-direction: row;
-    margin-left:20%;
+    margin-left: 20%;
     margin-bottom: 10px;
 }
 
@@ -22,5 +22,9 @@
     border-radius: 5px;
     border-color: rgb(38, 6, 68);
     padding: 2px;
+}
+
+.questionLine input::placeholder,
+.questionLine textarea::placeholder {
     font-family: 'Poppins', sans-serif;
 }
