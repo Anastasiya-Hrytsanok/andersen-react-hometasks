@@ -7,7 +7,7 @@ class SingleLineInput extends React.Component {
     return (
       <div className="questionLine">
         <label htmlFor={label}>{fieldName}</label>
-        <input type="text" id={label} placeholder={placeholder}></input>
+        <input type="text" id={label} placeholder={placeholder} />
       </div>
     );
   }

@@ -11,8 +11,8 @@ class MultiLineInput extends React.Component {
           id={label}
           placeholder={placeholder}
           rows={linesNumber}
-          maxLength="590"
-        ></textarea>
+          maxLength="600"
+        />
       </div>
     );
   }
