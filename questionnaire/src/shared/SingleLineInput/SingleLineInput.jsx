@@ -2,12 +2,21 @@ import React from 'react';
 
 class SingleLineInput extends React.Component {
   render() {
-    const { label, fieldName, placeholder } = this.props;
+    const { label, fieldName, placeholder, errorMessage, maxLength } =
+      this.props;
 
     return (
-      <div className="questionLine">
+      <div className={`questionLine ${Boolean(errorMessage) ? 'error' : ''}`}>
         <label htmlFor={label}>{fieldName}</label>
-        <input type="text" id={label} placeholder={placeholder} />
+        <div className="field">
+          <input
+            type={label === 'birthday' ? 'date' : 'text'}
+            id={label}
+            placeholder={placeholder}
+            maxLength={label === 'phonenumber' ? maxLength : ''}
+          />
+          {errorMessage && <div>{errorMessage}</div>}
+        </div>
       </div>
     );
   }

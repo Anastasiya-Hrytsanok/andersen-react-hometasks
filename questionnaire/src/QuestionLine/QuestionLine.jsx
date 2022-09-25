@@ -6,7 +6,9 @@ import './component.css';
 class QuestionLine extends React.Component {
   render() {
     const {
-      it: { linesNumber, fieldName, label, placeholder },
+      config: { linesNumber, fieldName, label, placeholder, validation, maxLength },
+      reset,
+      errorMessage,
     } = this.props;
 
     return linesNumber ? (
@@ -15,12 +17,17 @@ class QuestionLine extends React.Component {
         fieldName={fieldName}
         label={label}
         placeholder={placeholder}
+        validation={validation}
+        errorMessage={errorMessage}
+        reset={reset}
       />
     ) : (
       <SingleLineInput
         fieldName={fieldName}
         label={label}
         placeholder={placeholder}
+        errorMessage={errorMessage}
+        maxLength={maxLength || ''}
       />
     );
   }
