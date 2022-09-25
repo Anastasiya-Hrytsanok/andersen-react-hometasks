@@ -10,7 +10,7 @@
 }
 
 .questionLine input {
-    width: 50%;
+    width: 100%;
     border-radius: 5px;
     border-color: rgb(38, 6, 68);
     border-width: 1px;
@@ -18,13 +18,28 @@
 }
 
 .questionLine textarea {
-    width: 50%;
+    width: 100%;
     border-radius: 5px;
     border-color: rgb(38, 6, 68);
     padding: 2px;
 }
 
-.questionLine input::placeholder,
-.questionLine textarea::placeholder {
-    font-family: 'Poppins', sans-serif;
+.error input {
+    border-width: 3px;
+    border-color: red;
+}
+
+.error textarea {
+    border-width: 3px;
+    border-color: red;
+}
+
+.error div {
+    color: red;
+}
+
+.field {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 }

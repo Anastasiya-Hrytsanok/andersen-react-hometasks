@@ -3,7 +3,8 @@ import './component.css';
 
 class Header extends React.Component {
   render() {
-    return <h1>Создание анкеты</h1>;
+    const { content } = this.props;
+    return <h1>{content}</h1>;
   }
 }
 
