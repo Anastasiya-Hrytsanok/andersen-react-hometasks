@@ -3,27 +3,39 @@ import MultiLineInput from '../shared/MultiLineInput/MultiLineInput';
 import SingleLineInput from '../shared/SingleLineInput/SingleLineInput';
 import './component.css';
 
-class QuestionLine extends React.Component {
-  render() {
-    const {
-      it: { linesNumber, fieldName, label, placeholder },
-    } = this.props;
-
-    return linesNumber ? (
-      <MultiLineInput
-        linesNumber={linesNumber}
-        fieldName={fieldName}
-        label={label}
-        placeholder={placeholder}
-      />
-    ) : (
-      <SingleLineInput
-        fieldName={fieldName}
-        label={label}
-        placeholder={placeholder}
-      />
-    );
-  }
+function QuestionLine({
+  config: {
+    linesNumber,
+    fieldName,
+    label,
+    placeholder,
+    validation,
+    maxLength,
+    type,
+  },
+  reset,
+  errorMessage,
+}) {
+  return linesNumber ? (
+    <MultiLineInput
+      linesNumber={linesNumber}
+      fieldName={fieldName}
+      label={label}
+      placeholder={placeholder}
+      validation={validation}
+      errorMessage={errorMessage}
+      reset={reset}
+    />
+  ) : (
+    <SingleLineInput
+      fieldName={fieldName}
+      label={label}
+      placeholder={placeholder}
+      errorMessage={errorMessage}
+      maxLength={maxLength || ''}
+      type={type || 'text'}
+    />
+  );
 }
 
 export default QuestionLine;
