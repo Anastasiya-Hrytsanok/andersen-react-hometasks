@@ -1,16 +1,27 @@
 import React from 'react';
 
-class SingleLineInput extends React.Component {
-  render() {
-    const { label, fieldName, placeholder } = this.props;
-
-    return (
-      <div className="questionLine">
-        <label htmlFor={label}>{fieldName}</label>
-        <input type="text" id={label} placeholder={placeholder} />
+function SingleLineInput({
+  label,
+  fieldName,
+  placeholder,
+  errorMessage,
+  maxLength,
+  type,
+}) {
+  return (
+    <div className={`questionLine ${Boolean(errorMessage) ? 'error' : ''}`}>
+      <label htmlFor={label}>{fieldName}</label>
+      <div className="field">
+        <input
+          type={type}
+          id={label}
+          placeholder={placeholder}
+          maxLength={maxLength}
+        />
+        {errorMessage && <div>{errorMessage}</div>}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default SingleLineInput;
